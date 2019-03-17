@@ -23,7 +23,7 @@ const StoryList = ({ stories }) => (
       }
 
       .story {
-        padding: 1em 0;
+        padding: 1em;
       }
 
       .story-title {

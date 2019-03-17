@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Error from 'next/error'
 
+import Layout from '../components/Layout'
 import StoryList from '../components/StoryList'
 
 const hackerNewsAPI = 'https://node-hnapi.herokuapp.com/news'
@@ -26,10 +27,9 @@ class Index extends React.Component {
     }
 
     return (
-      <div>
-        <h1>Hacker next</h1>
+      <Layout title="Hacker Next" description="A Hacker News clone made with Next.js">
         <StoryList stories={stories} />
-      </div>
+      </Layout>
     )
   }
 }
