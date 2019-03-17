@@ -1,6 +1,8 @@
 import fetch from 'isomorphic-unfetch'
 import Error from 'next/error'
 
+import StoryList from '../components/StoryList'
+
 const hackerNewsAPI = 'https://node-hnapi.herokuapp.com/news'
 
 class Index extends React.Component {
@@ -26,11 +28,7 @@ class Index extends React.Component {
     return (
       <div>
         <h1>Hacker next</h1>
-        <ul>
-          {stories.map(story => (
-            <li key={story.id}>{story.title}</li>
-          ))}
-        </ul>
+        <StoryList stories={stories} />
       </div>
     )
   }
