@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import StoryList from '../components/StoryList'
 
-const hackerNewsAPI = 'https://node-hnapi.herokuapp.com/news'
+const hackerNewsAPI = 'https://node-hnapi.herokuapp.com'
 
 class Index extends React.Component {
   static async getInitialProps({ req, res, query }) {
@@ -14,7 +14,7 @@ class Index extends React.Component {
 
     try {
       page = Number(query.page) || 1
-      const res = await fetch(`${hackerNewsAPI}?page=${page}`)
+      const res = await fetch(`${hackerNewsAPI}/news?page=${page}`)
       stories = await res.json()
     } catch (err) {
       console.log(err)
