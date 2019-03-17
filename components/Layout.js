@@ -1,3 +1,4 @@
+import { withRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -53,4 +54,4 @@ const Layout = ({ children, title, description }) => (
   </div>
 )
 
-export default Layout
+export default withRouter(Layout)
