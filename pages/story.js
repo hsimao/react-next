@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Error from 'next/error'
 import Layout from '../components/Layout'
+import CommentList from '../components/CommentList'
 
 const hackerNewsAPI = 'https://node-hnapi.herokuapp.com'
 
@@ -37,7 +38,14 @@ class Story extends React.Component {
             <strong>{story.points} points</strong>
             <strong>{story.comments_count} comments</strong>
             <strong>{story.time_age}</strong>
+            length: {story.comments.length}
           </div>
+
+          {story.comments.length > 0 ? (
+            <CommentList comments={story.comments} />
+          ) : (
+            <div>No comments for this story</div>
+          )}
         </main>
 
         <style jsx>{`
