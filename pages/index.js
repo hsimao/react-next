@@ -23,6 +23,20 @@ class Index extends React.Component {
     return { stories, page }
   }
 
+  // 掛載完時註冊 serviceWorker
+  componentDidMount() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration => {
+          console.log('serviceWorker registration successful', registration)
+        })
+        .catch(err => {
+          console.warn('serviceWorker registration failed', err.message)
+        })
+    }
+  }
+
   render() {
     const { stories, page } = this.props
 

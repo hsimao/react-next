@@ -4,7 +4,9 @@
   "description": "A Hacker News clone made with Next.js",
   "main": "server.js",
   "scripts": {
-    "dev": "next"
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "build": "next build"
   },
   "author": "Mars",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "sw-precache-webpack-plugin": "^0.11.5"
   }
 }
