@@ -29,10 +29,10 @@ class Index extends React.Component {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then(registration => {
-          console.log('serviceWorker registration successful', registration)
+          console.log('service worker registration successful', registration)
         })
         .catch(err => {
-          console.warn('serviceWorker registration failed', err.message)
+          console.warn('service worker registration failed', err.message)
         })
     }
   }
