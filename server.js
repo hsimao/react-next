@@ -17,7 +17,7 @@ app.prepare().then(() => {
 
       // 如果是 service-worker 發出請求，則將其作為靜態文件提供
       if (pathname === '/service-worker.js') {
-        const filePath = path.join('__dirname', '.next', pathname)
+        const filePath = path.join(__dirname, '.next', pathname)
         app.serveStatic(req, res, filePath)
 
         // 如果不是 service-worker 就交由 next 處理
