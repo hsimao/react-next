@@ -1,8 +1,9 @@
 import { withRouter } from 'next/router'
 import Link from 'next/link'
+import Router from 'next/router'
 import Head from 'next/head'
 
-const Layout = ({ children, title, description }) => (
+const Layout = ({ children, title, description, backButton }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -10,6 +11,11 @@ const Layout = ({ children, title, description }) => (
     </Head>
     <div className="container">
       <nav>
+        {backButton && (
+          <span onClick={() => Router.back()} className="back-button">
+            &#x2b05;
+          </span>
+        )}
         <Link href="/">
           <a>
             <span className="main-title">{title}</span>
@@ -42,6 +48,12 @@ const Layout = ({ children, title, description }) => (
 
       nav .main-title {
         font-weight: bold;
+      }
+
+      nav .back-button {
+        font-size: 0.9rem;
+        padding-right: 1em;
+        cursor: pointer;
       }
     `}</style>
 

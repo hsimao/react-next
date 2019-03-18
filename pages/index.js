@@ -35,8 +35,15 @@ class Index extends React.Component {
         <StoryList stories={stories} />
 
         <footer>
+          {page > 1 && (
+            <Link href={`/?page=${page - 1}`}>
+              <a>Prev</a>
+            </Link>
+          )}
+          <span> {` ${page} `} </span>
+
           <Link href={`/?page=${page + 1}`}>
-            <a>Next Page ({page + 1})</a>
+            <a>Next</a>
           </Link>
         </footer>
 
